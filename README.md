@@ -4,3 +4,19 @@ This script is a Bash utility designed to create a FAT32 disk image from either 
 
 It was created to set up a USB Mass Storage Gadget (MSG) on devices like the Raspberry Pi 4B, allowing them to function as a USB drive via their USB-C port.<br/>
 To read more about using RPi 4B as USB storage device see [RPi USB Mass Storage presentation](https://docs.google.com/presentation/d/15Lz8w8MNY1QSk-mqhAnVPvj5aa0PITCZMUNTZzEpRkQ/edit?usp=sharing).
+
+    Usage: ./create_fat32_image.sh [-h] [-a INPUT_7ZIP_ARCHIVE] [-d INPUT_DIRECTORY] -o OUTPUT_DIRECTORY
+
+    This script creates FAT32 image from 7zip archive or directory content.
+    Image name consists of archive/directory name with ".img" suffix.
+    It requires sudo permissons.
+
+    Options:
+    -h    Show this help message and exit.
+    -a    Specify input 7zip archive with content for image.
+    -d    Specify input directory with content for image.
+    -o    Specify output directory for image.
+
+    Examples:
+    ./create_fat32_image.sh -a image_content.7z -o .
+    ./create_fat32_image.sh -d ./image_content_dir -o $HOME
